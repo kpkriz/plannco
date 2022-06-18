@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+:root{
+	/*hue-saturation-lightness-alpha*/
+	--primarycolor: hsl(330, 87%, 17%);
+	--secondarycolor: hsla(203, 100%, 13%, 1);
+}
+
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/* start header */
+header{
+    height:100vh;
+    background:linear-gradient(30deg,rgba(0,0,0,0),rgba(0,0,0,0.5))
+    ,url('../assets/img/banner/banner2.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+
+    position: relative;
+}
+
+/*start navbar*/
+
+.navbar{
+    background:linear-gradient(rgba(0,0,0,0.6),var(--secondarycolor));
+    padding:20px 30px;
+}
+
+
+.menuitems{
+	color: #eee;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.menuitems:hover{
+	color: #1aaee8;
+}
+
+.lines1, .lines2 , .lines3{
+	width: 25px;
+	height: 3px;
+	margin: 6px;
+}
+
+/*Start banner*/
+
+.banners{
+	width: 80%;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%,-50%);
+}
+
+.bannerheaders{
+	animation-name: banani;
+	animation-duration: 2s;
+}
+
+.bannerparagraphs{
+	animation-name: banani;
+	animation-duration: 2s;
+	animation-delay: 1s;
+	
+	animation-fill-mode: backwards;
+}
+
+
+@keyframes banani{
+	0%{
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	100%{
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+/*End banner*/
+
+/*End nav bar*/
+
