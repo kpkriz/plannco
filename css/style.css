@@ -14,11 +14,16 @@ body{
 /* start header */
 header{
     height:100vh;
-    background:linear-gradient(30deg,rgba(0,0,0,0),rgba(0,0,0,0.5))
-    ,url('../assets/img/banner/banner2.jpg');
+    background:linear-gradient(
+    	30deg,
+    	rgba(0,0,0,0),
+    	rgba(0,0,0,0.5)),
+    	url('../assets/img/banner/banner2.jpg');
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
+
+    background-attachment: fixed;
 
     position: relative;
 }
@@ -26,10 +31,17 @@ header{
 /*start navbar*/
 
 .navbar{
-    background:linear-gradient(rgba(0,0,0,0.6),var(--secondarycolor));
-    padding:20px 30px;
+    background:linear-gradient(rgba(0,0,0,0.3),var(--secondarycolor));
+    padding:15px 30px;
+
+    transition: all .7s;
+
 }
 
+.navmenus{
+    background:linear-gradient(rgba(0,0,0,0.6),var(--secondarycolor));
+    padding:2px 30px;
+}
 
 .menuitems{
 	color: #eee;
@@ -45,7 +57,22 @@ header{
 	width: 25px;
 	height: 3px;
 	margin: 6px;
+
+	transition: all 0.5s;
 }
+
+.crossxs .lines1{
+	transform: rotate(-45deg) translate(-6px,7px);
+}
+
+.crossxs .lines2{
+	opacity: 0;
+}
+
+.crossxs .lines3{
+	transform: rotate(45deg) translate(-6px,-6px);
+}
+
 
 /*Start banner*/
 
@@ -88,4 +115,100 @@ header{
 /*End banner*/
 
 /*End nav bar*/
+
+
+/*Start About Us*/
+
+.aboutuss{
+	background:linear-gradient(
+		30deg,
+		rgba(0,0,0,0.3),
+		rgba(0,0,0,0.3)
+	),url('../assets/img/banner/banner2.jpg');
+    
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: center;
+    background-attachment: fixed;
+
+    position: relative;
+}
+
+.aboutuss .lines{
+	width: 30%;
+	height: 1.2px;
+	background-color: #fff;
+	margin-bottom: 3px;
+}
+
+.aboutuss .lines:nth-of-type(2){
+	width: 20%;
+	height: 1px;
+}
+
+.aboutuss .lines:nth-of-type(3){
+	width: 10%;
+	height: 0.5px;
+}
+
+.aboutuss h6{
+	background-color: #fff;
+	color: #000;
+	border-left: 5px solid red;
+
+	padding: 10px;
+}
+
+.aboutuss h6 ~ p{
+	text-align: left;
+	margin: 30px 0;
+}
+
+.aboutuss img{
+	width: 350px;
+
+	position: absolute;
+	bottom: 0;
+}
+
+/*End About Us*/
+
+/*Start Properties*/
+
+.titles{
+	text-transform: uppercase;
+	color: var(--secondarycolor);
+	display: inline-block;
+	padding: 5px 15px;
+
+	position: relative;
+
+}
+
+.titles::before,.titles::after{
+	content: '';
+	width: 20px;
+	height: 20px;
+
+	position: absolute;
+}
+
+.titles::before{
+	border-left: 3px solid var(--primarycolor);
+	border-bottom: 3px solid var(--primarycolor);
+
+	left: 0;
+	bottom: 0;
+}
+
+.titles::after{
+	border-right: 3px solid var(--primarycolor);
+	border-top: 3px solid var(--primarycolor);
+	
+	right: 0;
+	top: 0;
+}
+
+/*End Properties*/
+/*23PP*/
 
