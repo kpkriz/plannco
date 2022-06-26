@@ -209,6 +209,15 @@ header{
 	top: 0;
 }
 
+.propertylists{
+	color: #777;
+	cursor: pointer;
+}
+
+.activeitems{
+	color: var(--primarycolor);
+}
+
 /*End Properties*/
 /*23PP*/
 
