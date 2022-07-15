@@ -1,55 +1,125 @@
 $(document).ready(function(){
 
-	// Start Header
+    // Start Back To Top
+        $(".btn-backtotops").hide();
+        $(window).scroll(function () {
+            let getscrolltop = $(this).scrollTop();
+            console.log(getscrolltop);
 
-		// Start nav
+            if (getscrolltop >= 370) {
+                $(".btn-backtotops").fadeIn(1000);
+            } else {
+                $(".btn-backtotops").fadeOut(1000);
+            }
+        });
 
-			// for bugger
-			$(".navbuttons").click(function(){
-				$(".navbuttons").toggleClass("crossxs");
-			});
+    // End Back To Top
 
-			// fot nav
-			$(window).scroll(function(){
+    // Start Header
 
-				let getscrolltop = $(this).scrollTop();
-				console.log(getscrolltop);
+        // Start nav
 
-				if(getscrolltop >= 200){
-					$(".navbar").addClass("navmenus");
-				}else{
-					$(".navbar").removeClass("navmenus");
-				}
+            // For bugger
+            $(".navbuttons").click(function(){
+                $(".navbuttons").toggleClass("crossxs");
+            });
 
-				});
+            // For nav
+            $(window).scroll(function(){
 
-		// End nav
+                let getscrolltop = $(this).scrollTop();
+                console.log(getscrolltop);
 
-	// End Header
+                if(getscrolltop >= 200){
+                    $(".navbar").addClass("navmenus");
+                }else{
+                    $(".navbar").removeClass("navmenus");
+                }
+            });
 
 
-	// Start Properties
+        // End nav
 
-	$(".propertylists").click(function(){
+    // End Header
 
-		// For property
-		$(this).addClass("activeitems").siblings().removeClass("activeitems");
 
-		// For filter
-		let getattvalue = $(this).attr("data-filter");
-		// console.log(getattvalue);
+    // Start properties
 
-		if(getattvalue === "all"){
-			$(".filters").show("slide",500);
-		}else{
+    $(".propertylists").click(function(){
 
-			$(".filters").not("."+getattvalue).hide("slide",500);
+    // for acitve items
+    // $(this).addClass("activeitems");
+    // $(this).siblings().removeClass("activeitems");
+    $(this).addClass("activeitems").siblings().removeClass("activeitems");
 
-			$(".filters").filter("."+getattvalue).show("slide",500);
-		}
 
-	});
+    // for filter
+    let getattvalue = $(this).attr("data-filter");
+    console.log(getattvalue);
 
-	// End Propertyies
+    if(getattvalue === "all"){
+        $(".filters").show("slide",500);
+    }else{
+
+        $(".filters").hide();
+        
+        $(".filters").not("."+getattvalue).hide("slide",500);
+
+        $(".filters").filter("."+getattvalue).show("slide",500);
+    }
+
+    });
+
+    // For image overlay (or) lightbox2
+    lightbox.option({
+        showImageNumberLabel:false
+    });
+
+    // End properties section
+
+
+    // Start Adv section
+
+    $(window).scroll(function(){
+        let getscrolltop = $(this).scrollTop();
+        
+        // console.log(getscrolltop);
+
+        if(getscrolltop >= 900){
+            $(".advimages").addClass("fromlefts");
+            $(".advtexts").addClass("fromrights");
+        }else{
+            $(".advimages").removeClass("fromlefts");
+            $(".advtexts").removeClass("fromrights");        
+        }
+    });
+    
+    // End Adv section
+
+    // Start Footer Section
+    const getyear = $("#getyear");
+    const getfullyear = new Date().getUTCFullYear();
+    getyear.text(getfullyear);
+    // End Footer Section
+
+    
+
 
 });
+
+
+
+
+
+
+
+
+
+
+
+// 16PL
+// 23PP
+
+
+
+
